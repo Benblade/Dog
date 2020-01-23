@@ -1,0 +1,24 @@
+public class Dog {
+
+    private int age;
+    private double weight;
+    private String name;
+
+    public Dog( int ag, double wt, String nm ) {
+    age=ag;
+    weight=wt;
+    name=nm;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
