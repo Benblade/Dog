@@ -1,0 +1,71 @@
+import java.util.*;
+
+public class Kennel {
+
+	private ArrayList<Dog> dogs;
+
+	public Kennel() {
+		dogs = new ArrayList<>();
+	}
+
+	public void addDog ( Dog d ) {
+		dogs.add ( d );
+	}
+
+	public int kennelSize() {
+		int size = dogs.size();
+		return size;
+	}
+
+	public Dog findOldest() {
+		Dog old = new Dog ( 0, 0.0, "" );
+		int young = 0;
+		for ( int i = 0; i < dogs.size(); i++ ) {
+			Dog dog = dogs.get ( i );
+			if ( dog.getAge() > young ) {
+				young = dog.getAge();
+				old = dog;
+			}
+		}
+		return old;
+	}
+
+	public Dog findYoungest() {
+		Dog old = new Dog ( 0, 0.0, "" );
+		int young = Integer.MAX_VALUE;
+		for ( int i = 0; i < dogs.size(); i++ ) {
+			Dog dog = dogs.get ( i );
+			if ( dog.getAge() < young ) {
+				young = dog.getAge();
+				old = dog;
+			}
+		}
+		return old;
+	}
+
+	public Dog findHeaviest() {
+		Dog heavy = new Dog ( 0, 0.0, "" );
+		Double lb = Double.MIN_VALUE;
+		for ( int i = 0; i < dogs.size(); i++ ) {
+			Dog dog = dogs.get ( i );
+			if ( dog.getWeight() > lb ) {
+				lb = dog.getWeight();
+				heavy = dog;
+			}
+		}
+		return heavy;
+	}
+
+	public Dog findLightest() {
+		Dog light = new Dog ( 0, 0.0, "" );
+		Double lb = Double.MAX_VALUE;
+		for ( int i = 0; i < dogs.size(); i++ ) {
+			Dog dog = dogs.get ( i );
+			if ( dog.getWeight() < lb ) {
+				lb = dog.getWeight();
+				light = dog;
+			}
+		}
+		return light;
+	}
+}
